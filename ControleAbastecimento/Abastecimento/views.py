@@ -34,7 +34,7 @@ class CreateVeiculo(CreateView):
 
 class CreateBomba(CreateView):
     model = Bomba
-    fields = ['tipocombustivel', 'capacidadebomba']
+    fields = ['tipocombustivel', 'capacidadebomba', 'quantidadedeestoque']
 
 class CreateAbastecimento(CreateView):
     model = Abastecimento
@@ -43,3 +43,48 @@ class CreateAbastecimento(CreateView):
 class CreateCompra(CreateView):
     model = CompraCombustivel
     fields = ['data', 'quantidadelitros', 'precolitro']
+
+class UpdateVeiculo(UpdateView):
+    model = Veiculo
+    fields = ['placa', 'descricao', 'capacidadetanque']
+    template_name = 'abastecimento/update.html'
+
+class UpdateAbastecimento(UpdateView):
+    model = Abastecimento
+    fields = ['data', 'quantidadelitros', 'km_odometro']
+    template_name = 'abastecimento/update.html'
+
+class UpdateCompra(UpdateView):
+    model = CompraCombustivel
+    fields = ['data', 'quantidadelitros', 'precolitro']
+    template_name = 'abastecimento/update.html'
+
+class UpdateBomba(UpdateView):
+    model = Bomba
+    fields = ['tipocombustivel', 'capacidadebomba', 'quantidadedeestoque']
+    template_name = 'abastecimento/update.html'
+
+class UpdateFuncionario(UpdateView):
+    model = Funcionario
+    fields = ['nome', 'cpf']
+    template_name = 'abastecimento/update.html'
+
+class DeleteFuncionario(DeleteView):
+    model = Funcionario
+    template_name = 'abastecimento/delete.html'
+
+class DeleteVeiculo(DeleteView):
+    model = Veiculo
+    template_name = 'abastecimento/delete.html'
+
+class DeleteAbastecimento(DeleteView):
+    model = Abastecimento
+    template_name = 'abastecimento/delete.html'
+
+class DeleteBomba(DeleteView):
+    model = Bomba
+    template_name = 'abastecimento/delete.html'
+
+class DeleteCompra(DeleteView):
+    model = CompraCombustivel
+    template_name = 'abastecimento/delete.html'

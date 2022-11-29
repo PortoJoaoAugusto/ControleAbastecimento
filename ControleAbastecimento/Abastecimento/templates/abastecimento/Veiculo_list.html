@@ -14,6 +14,7 @@
                                         <th scope="col">Placa</th>
                                         <th scope="col">Descrição</th>
                                         <th scope="col">Capacidade do Tanque</th>
+                                        <th scope="col"></th>
                                 </tr>
                         </thead>
                         <tbody>
@@ -23,6 +24,10 @@
                                         <td>{{ object.placa }}</td>
                                         <td>{{ object.descricao }}</td>
                                         <td>{{ object.capacidadetanque }}</td>
+                                        <td class='d-flex justify-content-end'>
+                                                <a class ='mx-1' href="{% url 'editar_veiculo' object.id %}"><button type="button" class="btn btn-warning">Update</button></a>
+                                                <a class ='mx-1' href="{% url 'del_veiculo' object.id %}"><button type="button" class="btn btn-danger">Delete</button></a>
+                                        </td>
                                         {% endfor %}
                                 </tr>
                         </tbody>
